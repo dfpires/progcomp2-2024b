@@ -28,9 +28,9 @@ let bomDia = function(){
 bomDia()
 
 // define um timeout
-setTimeout(function (){
-    console.log("Função será executada de 2 em 2 segundos")
-} , 2000)
+//setTimeout(function (){
+//    console.log("Função será executada de 2 em 2 segundos")
+//} , 2000)
 
 // função com seta arrow function
 let boaTarde = () => {
@@ -47,12 +47,47 @@ divisao(8,6)
 let boaMadruga = () => console.log("Zumbi") // sem chave
 boaMadruga()
 
-function Exemplo() {
-    contador = 0;
-    setInterval(function() {
-        contador++;
-        console.log(contador);
-    }, 1000);
-}
+/* Crie uma arrow function chamada somarPares.
+A função deve iterar sobre os números de 1 a 20.
+Dentro dessa função, some todos os números pares (sem usar vetores). 
+A função deve retornar o resultado da soma. */
 
-Exemplo();
+let somarPares = () => {
+    let soma = 0
+    for(let i = 1; i<=20; i++){
+        if (i % 2 == 0){
+            soma += i // soma = soma + i
+        }
+    }
+    return soma
+}
+console.log(somarPares())
+
+/* Dado um texto e dois índices, crie uma arrow function que use o 
+método slice() para extrair e retornar uma substring do texto 
+original. A substring deve começar no primeiro índice e terminar 
+no segundo índice (exclusivo). */
+
+let pedaco = (nome, inicio, fim) => {
+    return nome.slice(inicio, fim)
+}
+console.log(pedaco("Carlos Eduardo", 5, 12))
+console.log(pedaco("Marcos da Silva", 3, 7))
+console.log(pedaco("Leonardo de Deus", 7, 9))
+
+let pedaco2 = (nome, inicio, fim) => {
+    console.log(nome.slice(inicio, fim))
+}
+pedaco2("Carlos Eduardo", 5, 12)
+pedaco2("Marcos da Silva", 3, 7)
+pedaco2("Leonardo de Deus", 7, 9)
+let aux = "Pegar Tudo"
+pedaco2(aux, 0, aux.length)
+
+// uso do map
+let carros = ["celta", "palio", "onix", "uno"]
+// map faz o for pra gente
+// carro representa cada carro do vetor carros
+carros.map( carro => console.log(carro))
+
+carros.map( (carro, posicao) => console.log(carro + " " + posicao))
