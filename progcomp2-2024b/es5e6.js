@@ -1,3 +1,4 @@
+/*
 // cria função - a e b são parâmetros da função
 function soma(a, b){
     let result = a + b
@@ -51,7 +52,7 @@ boaMadruga()
 A função deve iterar sobre os números de 1 a 20.
 Dentro dessa função, some todos os números pares (sem usar vetores). 
 A função deve retornar o resultado da soma. */
-
+/*
 let somarPares = () => {
     let soma = 0
     for(let i = 1; i<=20; i++){
@@ -67,7 +68,7 @@ console.log(somarPares())
 método slice() para extrair e retornar uma substring do texto 
 original. A substring deve começar no primeiro índice e terminar 
 no segundo índice (exclusivo). */
-
+/*
 let pedaco = (nome, inicio, fim) => {
     return nome.slice(inicio, fim)
 }
@@ -91,3 +92,59 @@ let carros = ["celta", "palio", "onix", "uno"]
 carros.map( carro => console.log(carro))
 
 carros.map( (carro, posicao) => console.log(carro + " " + posicao))
+
+
+/* Crie uma função anônima que recebe um número como parâmetro 
+e retorna `true` se o número for par, ou `false` se for ímpar. */
+let verificaParImpar = (numero) => {
+    if (numero % 2 == 0){
+        return true
+    }
+    else {
+        return false
+    }
+}
+console.log(verificaParImpar(19))
+// com operador ternário
+let verificaOT = (numero) => {
+    return numero % 2 == 0 ? true : false
+}
+
+let boaNoite = () => {
+    console.log("Boa noite")
+}
+
+/* Crie uma função anônima que recebe três números como parâmetros 
+e retorna a média desses números. */
+let media = (a, b, c) => {
+    return (a + b + c) / 3
+}
+console.log(media(4, 6, 8))
+
+// usando o map
+let numeros = [10, 20, 30, 40]
+// map retorna um outro vetor
+let dobrado = numeros.map( bola => bola * 2)
+console.log(dobrado)
+
+let exe1 = [3, 4, 5, 6]
+let quadrado = exe1.map( numero => numero * numero)
+console.log(quadrado)
+
+let exe2 = ["maça", "uva", "laranja", "caju"]
+let maiusculo = exe2.map( palavra => palavra.toUpperCase())
+console.log(maiusculo)
+
+let exe3 = [1, 2, 3, 4]
+let soma10 = exe3.map( numero => numero + 10)
+console.log(soma10)
+
+let exe4 = ["globo", "record", "bandeirantes", "Cazé TV"]
+let concatena = exe4.map( canal => canal.concat(" - Processada"))
+console.log(concatena)
+
+let filtro = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let pares = filtro.filter( numero => numero % 2 == 0)
+console.log(pares)
+
+
