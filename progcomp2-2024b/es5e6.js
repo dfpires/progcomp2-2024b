@@ -1,4 +1,4 @@
-/*
+
 // cria função - a e b são parâmetros da função
 function soma(a, b){
     let result = a + b
@@ -12,8 +12,7 @@ function multiplicacao(a, b){
     let result = a * b
     return result
 }
-let resultado = multiplicacao(6, 8)
-console.log(resultado)
+console.log(multiplicacao(6, 8))
 
 // função anônima - sem nome
 let subtracao = function (a, b){ // variável é uma função
@@ -29,7 +28,7 @@ let bomDia = function(){
 bomDia()
 
 // define um timeout
-//setTimeout(function (){
+//setTimeout( () => {
 //    console.log("Função será executada de 2 em 2 segundos")
 //} , 2000)
 
@@ -52,7 +51,7 @@ boaMadruga()
 A função deve iterar sobre os números de 1 a 20.
 Dentro dessa função, some todos os números pares (sem usar vetores). 
 A função deve retornar o resultado da soma. */
-/*
+
 let somarPares = () => {
     let soma = 0
     for(let i = 1; i<=20; i++){
@@ -68,7 +67,7 @@ console.log(somarPares())
 método slice() para extrair e retornar uma substring do texto 
 original. A substring deve começar no primeiro índice e terminar 
 no segundo índice (exclusivo). */
-/*
+
 let pedaco = (nome, inicio, fim) => {
     return nome.slice(inicio, fim)
 }
@@ -89,9 +88,13 @@ pedaco2(aux, 0, aux.length)
 let carros = ["celta", "palio", "onix", "uno"]
 // map faz o for pra gente
 // carro representa cada carro do vetor carros
-carros.map( carro => console.log(carro))
+carros.forEach( 
+    carro => console.log(carro)
+)
 
-carros.map( (carro, posicao) => console.log(carro + " " + posicao))
+carros.forEach( 
+    (carro, posicao) => console.log(carro + " " + posicao)
+)
 
 
 /* Crie uma função anônima que recebe um número como parâmetro 
@@ -113,7 +116,7 @@ let verificaOT = (numero) => {
 let boaNoite = () => {
     console.log("Boa noite")
 }
-
+boaNoite()
 /* Crie uma função anônima que recebe três números como parâmetros 
 e retorna a média desses números. */
 let media = (a, b, c) => {
@@ -124,27 +127,44 @@ console.log(media(4, 6, 8))
 // usando o map
 let numeros = [10, 20, 30, 40]
 // map retorna um outro vetor
-let dobrado = numeros.map( bola => bola * 2)
+let dobrado = numeros.map( 
+    bola => bola * 2
+)
 console.log(dobrado)
 
 let exe1 = [3, 4, 5, 6]
-let quadrado = exe1.map( numero => numero * numero)
+let quadrado = exe1.map( 
+    numero => numero * numero
+)
 console.log(quadrado)
 
 let exe2 = ["maça", "uva", "laranja", "caju"]
-let maiusculo = exe2.map( palavra => palavra.toUpperCase())
+let maiusculo = exe2.map( 
+    palavra => palavra.toUpperCase()
+)
 console.log(maiusculo)
 
 let exe3 = [1, 2, 3, 4]
-let soma10 = exe3.map( numero => numero + 10)
+let soma10 = exe3.map( 
+    numero => numero + 10
+)
 console.log(soma10)
 
 let exe4 = ["globo", "record", "bandeirantes", "Cazé TV"]
-let concatena = exe4.map( canal => canal.concat(" - Processada"))
+let concatena = exe4.map( 
+    canal => canal.concat(" - Processada")
+)
 console.log(concatena)
 
 let filtro = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-let pares = filtro.filter( numero => numero % 2 == 0)
+let pares = filtro.filter( 
+    numero => numero % 2 == 0
+)
 console.log(pares)
 
 
+let filtro = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let pares = filtro.map( 
+    numero => numero % 2 == 0
+)
+console.log(pares)// [false, true, false, true, false, true, false, true, false, true]

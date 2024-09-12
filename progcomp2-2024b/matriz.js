@@ -1,6 +1,6 @@
 const prompt = require('prompt-sync')();
 
-/*
+
 let matriz = []
 for(let i=0;i<2;i++){
     matriz[i] = [] // cria um vetor de vetores
@@ -10,7 +10,7 @@ for(let i=0;i<2;i++){
     }
 }
 
-/*
+
 console.log('Exibindo todos os elementos da matriz')
 console.log(matriz)
 console.log('Exibindo os elementos da diagonal principal')
@@ -37,7 +37,15 @@ console.log('Elementos da coluna 2')
 for(let i=0;i<4;i++){
     console.log(matriz[i][2])
 }
-*/
+
+
+let letras = ['a', 'b', 'c', 'd']
+
+letras.forEach( 
+    (elemento, i) => console.log(`${elemento} e sua posição ${i}`)
+)
+
+
 
 const matrizOriginal = [
     [1, 2, 3],
@@ -45,11 +53,42 @@ const matrizOriginal = [
     [7, 8, 9]
 ];
 
+let soma
+matrizOriginal.forEach(
+    (vetor, i) => {
+        soma = 0
+        vetor.forEach(
+            elemento => soma = soma + elemento
+            )
+        console.log(`Linha ${i} Soma ${soma}`)
+    }    
+    )
+
+
+let vet = matrizOriginal.map(
+    (vetor) => vetor.reduce(
+            (acum, ele) => acum + ele, 0
+            )   
+    )
+
 // Criando a nova matriz usando map
-let novaMatriz = matrizOriginal.map( vetor => 
-    vetor.map( elemento => elemento * 2  )
+let filtrado = matrizOriginal.map( 
+    vetor => vetor.filter( 
+        elemento => elemento % 2 == 0  
+    )
+)
+console.log(filtrado)
+
+// Criando a nova matriz usando map
+let novaMatriz = matrizOriginal.map( 
+    vetor => vetor.map( 
+        elemento => elemento * 2  
+    )
 )
 
+
+
+/*
 // Exibindo a nova matriz
 console.log("Matriz Original:");
 console.log(matrizOriginal);
@@ -68,3 +107,5 @@ matrizOriginal.map(
         elemento => console.log(elemento)
     )
 );
+
+*/
