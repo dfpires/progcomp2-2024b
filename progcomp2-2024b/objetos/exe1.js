@@ -28,32 +28,34 @@ let item3 = (vetor) => {
     let soma = vetor.reduce(
         (acum, objeto) => acum + objeto.nota, 0
     )
-    console.log(soma/5)
+    console.log(soma/vetor.length)
 }
 
+let item4 = (vetor) => {
+    vetor.push({
+        nome: prompt(`Informe o nome do aluno`),
+        idade: Number(prompt(`Informe idade do aluno`)),
+        nota: Number(prompt(`Informe nota do aluno`))
+    })
+}
 
 let principal = () => {
-    let alunos = [
-        { nome: "Paulo", idade: 17, nota: 6.0 },
-        { nome: "Pedro", idade: 18, nota: 7.0 },
-        { nome: "Lucas", idade: 19, nota: 8.0 },
-        { nome: "João", idade: 20, nota: 9.0 },
-        { nome: "Carlos", idade: 21, nota: 10.0 }
-    ]
+    let alunos = []
     // chamar a função item1
     // vamos fazer um menu de opções
     let opcao
     do{
-        console.log(`Digite 1.Item 1 \n 2.Item 2 \n 3. Item 3 \n 4.Sair`)
+        console.log(`Digite\n 1.Lista \n 2.Maior nota \n 3.Média \n 4.Cadastra \n5. Sair`)
         opcao = Number(prompt())
         switch(opcao){
             case 1: item1(alunos); break
             case 2: item2(alunos); break
             case 3: item3(alunos); break
-            case 4: console.log(`Vai sair`); break
+            case 4: item4(alunos); break
+            case 5: console.log(`Vai sair`); break
             default: console.log(`Opção inválida`)
         }
     }
-    while (opcao != 4)
+    while (opcao != 5)
 }
 principal()
